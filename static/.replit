@@ -1,0 +1,13 @@
+run = "vite --host 0.0.0.0 --port 443 serve ./public"
+hidden = [".config"]
+
+[env]
+PATH = "/home/runner/$REPL_SLUG/.config/npm/node_global/bin:/home/runner/$REPL_SLUG/node_modules/.bin"
+npm_config_prefix = "/home/runner/$REPL_SLUG/.config/npm/node_global"
+
+[nix]
+channel = "stable-22_11"
+
+[deployment]
+deploymentTarget = "static"
+publicDir = "public"

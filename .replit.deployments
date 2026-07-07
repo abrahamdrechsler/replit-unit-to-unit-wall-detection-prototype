@@ -1,0 +1,5 @@
+# This file is used to configure deployments for Replit.
+run = "npm run dev"
+deploymentTarget = "static"
+publicDir = "dist/public"
+buildCommand = "bash deploy.sh"

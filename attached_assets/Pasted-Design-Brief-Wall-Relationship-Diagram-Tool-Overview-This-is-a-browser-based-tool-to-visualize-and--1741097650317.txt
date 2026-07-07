@@ -1,0 +1,51 @@
+Design Brief: Wall Relationship Diagram Tool
+Overview
+This is a browser-based tool to visualize and interact with rectangular shapes on a dynamically expanding grid. The goal is to demonstrate spatial relationships between shapes using color-coded borders. The app should be built using a modern interactive UI framework, preferably TypeScript and React, but implementation is flexible.
+
+Core Features
+Canvas & Grid
+The canvas should display a 2D grid where each cell represents a unit.
+The grid dynamically expands to fit the browser window and resizes if the window changes.
+The grid remains fixed in scale (no zooming or panning).
+The grid should always be visible, even when shapes are drawn on top of it.
+Adding Shapes
+A plus button ("+") should be located at the top-right corner of the grid.
+Clicking the plus button enters "add shape mode."
+In this mode:
+Clicking on a starting cell defines the first corner of the rectangle.
+Moving the mouse previews the rectangle’s size dynamically as the user drags.
+Clicking again sets the final corner and creates the shape.
+Shapes should have a one-cell-wide border and a fully transparent interior (so the grid remains visible inside).
+The shape’s border color should be red by default.
+Multiple Shapes
+Users should be able to click the plus button multiple times to add more shapes.
+A maximum of 10 shapes can be drawn at a time.
+Shape Selection & Deletion
+Clicking inside a shape selects it.
+The selected shape should be visually highlighted to indicate it is active.
+Once a shape is selected, an “X” delete button should appear next to the plus button.
+Clicking “X” removes the selected shape from the canvas.
+Moving Shapes
+Clicking inside a shape selects it.
+Clicking and dragging the shape moves it across the grid.
+Movement should be snapped to grid cells (no freeform dragging).
+The rectangle should be previewed in its new position before releasing the mouse.
+Shape Interactions & Border Colors
+Shapes can overlap, but do not obscure each other since their interiors are transparent.
+Border colors should change based on interactions:
+
+Condition	Border Color
+Default (No Overlaps)	Red
+Overlapping Borders (Same Tile)	Blue
+Border Cells Inside Another Shape's Border	Yellow
+Red: The default color when no overlap occurs.
+Yellow: If a border cell of one rectangle is fully enclosed within another rectangle's border.
+Blue: If two or more borders overlap at the exact same tile.
+These color rules should be calculated dynamically on the frontend.
+Preview & Editing
+Users should be able to create, move, and delete shapes interactively in real time.
+A minimal UI should be used, focusing on direct interactions with shapes.
+Additional Notes
+No keyboard shortcuts for now.
+No persistence or export features needed.
+Max of 10 shapes allowed to prevent performance slowdowns.
